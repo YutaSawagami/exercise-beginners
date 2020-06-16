@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+数字を入力してください<br>
+<form th:action="@{ex02/result}" method="post">
+<input type="text" name="num1"> 
++
+<input type="text" name="num2">
+=<br>
+<button>計算</button>
+</form>
+</body>
+</html>
