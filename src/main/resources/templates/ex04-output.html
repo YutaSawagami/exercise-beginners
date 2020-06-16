@@ -5,10 +5,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-名前:<span th:text="${session.user.name}"></span><br>
-年齢:<span th:text="${session.user.age}"></span><br>
-コメント:<span th:text="${session.user.comment}"></span>
-
+<div th:object="${session.user}">
+名前:<span th:text="*{name}"></span><br>
+年齢:<span th:text="*{age}"></span><br>
+コメント:<span th:text="*{comment}"></span>
+</div>
 </body>
 </html>
