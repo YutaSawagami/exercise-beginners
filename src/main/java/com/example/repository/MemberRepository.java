@@ -18,7 +18,7 @@ public class MemberRepository {
 	@Autowired
 	private NamedParameterJdbcTemplate template;
 	
-	private static final RowMapper<MemberDomain> ROW_MAPPER = (rs,i) -> {
+	private static final RowMapper<MemberDomain> MEMBER_ROW_MAPPER = (rs,i) -> {
 		MemberDomain member = new MemberDomain();
 		member.setId(rs.getInt("id"));
 		member.setName(rs.getString("name"));
@@ -29,10 +29,12 @@ public class MemberRepository {
 	
 	public List<MemberDomain> load(String word){
 		List<MemberDomain> memberList = new ArrayList<MemberDomain>();
-		String sql = "select * from members where name like :firstName";
-		SqlParameterSource param = new MapSqlParameterSource().addValue("firstName", "%"+word+"%");
-		memberList.add(template.queryForObject(sql, param, ROW_MAPPER));
+		String sql = "select * from members where name like :word";
+		SqlParameterSource param = new MapSqlParameterSource().addValue("word", "%"+word+"%");
+		System.out.println("ここまでは来てる");
+		memberList = template.query(sql, param, MEMBER_ROW_MAPPER);
 		return memberList;
+		
 	}
 	
 }
