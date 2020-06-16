@@ -40,6 +40,6 @@ public class Ex04Controller {
 		userDomain.setAge(Integer.parseInt(form.getAge()));
 		userDomain.setComment(form.getComment());
 		session.setAttribute("user", userDomain);
-		return "ex03-output";
+		return "ex04-output";
 	}
 }
