@@ -7,18 +7,24 @@
 <body>
 <h2>ユーザー登録</h2>
 <form th:action="@{/ex04/output}" th:object="${userForm}" method="post">
+	
+名前:<br><input type="text" name="name" th:field="*{name}"><br>
 	<div th:if="${#fields.hasErrors('name')}"
 	 th:errors="*{name}"
-	 style="color:red"></div>
-名前:<br><input type="text" name="name" th:field="*{name}"><br>
- <div th:if="${#fields.hasErrors('age')}"
-	 th:errors="*{age}"
-	 style="color:red"></div>
+	 style="color:red"></div><br>
+	 
+ 
 年齢:<br><input type="text" name="age" th:field="*{age}"><br>
-<div th:if="${#fields.hasErrors('comment')}"
-	 th:errors="*{comment}"
-	 style="color:red"></div>
+	<div th:if="${#fields.hasErrors('age')}"
+	 th:errors="*{age}"
+	 style="color:red"></div><br>
+
+
 コメント:<br><textarea name="comment" rows="5" cols="50" th:field="*{comment}"></textarea>
+	<div th:if="${#fields.hasErrors('comment')}"
+	 th:errors="*{comment}"
+	 style="color:red"></div><br>
+	 
 <button>登録</button>
 </form>
 </body>
