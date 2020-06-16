@@ -18,7 +18,7 @@ public class Ex03Controller {
 		return "ex03-input";
 	}
 	
-	@RequestMapping("/result")
+	@RequestMapping("/calc")
 	public String calc(int item1Price, int item2Price, int item3Price) {
 		int total = item1Price + item2Price + item3Price;
 		int totalInTax = (int)(total * 1.1);
