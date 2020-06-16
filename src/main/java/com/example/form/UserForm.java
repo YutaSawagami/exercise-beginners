@@ -1,10 +1,12 @@
 package com.example.form;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 public class UserForm {
 	@NotBlank(message="名前は必須です。" )
 	private String name;
 	
+	@Pattern(regexp = "^[0-9]*$")
 	@NotBlank(message="年齢は必須です。" )
 	private String age;
 	
