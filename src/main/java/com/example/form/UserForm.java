@@ -6,7 +6,7 @@ public class UserForm {
 	private String name;
 	
 	@NotBlank(message="年齢は必須です。" )
-	private int age;
+	private String age;
 	
 	@NotBlank(message="コメントは必須です。" )
 	private String comment;
@@ -19,11 +19,11 @@ public class UserForm {
 		this.name = name;
 	}
 
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 

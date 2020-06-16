@@ -37,7 +37,7 @@ public class Ex04Controller {
 		}
 		UserDomain userDomain = new UserDomain();
 		userDomain.setName(form.getName());
-		userDomain.setAge(form.getAge());
+		userDomain.setAge(Integer.parseInt(form.getAge()));
 		userDomain.setComment(form.getComment());
 		session.setAttribute("user", userDomain);
 		return "ex03-output";
